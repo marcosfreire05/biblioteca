@@ -1,3 +1,3 @@
 # Sistema de Gerenciamento de Biblioteca
 
-Sistema para gerenciar empréstimos de livros por alunos e professores usando Programação Orientada a Objetos.
+Sistema completo com interface gráfica, persistência de dados, e modelagem POO com herança, polimorfismo, composição, encapsulamento, mixins e associação.

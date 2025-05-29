@@ -36,8 +36,10 @@ def menu():
             usuario = input("Nome do usuário: ")
             biblioteca.ver_multa(usuario)
         elif op == '6':
+            biblioteca.salvar_dados()
             break
         else:
             print("Opção inválida")
 
+biblioteca.carregar_dados()
 menu()

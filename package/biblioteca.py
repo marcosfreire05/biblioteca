@@ -1,3 +1,4 @@
+import pickle, os
 from package.usuario import Aluno, Professor
 from package.livro import Livro
 from package.emprestimo import Emprestimo
@@ -7,6 +8,15 @@ class Biblioteca:
         self.usuarios = []
         self.livros = []
         self.emprestimos = []
+
+    def salvar_dados(self):
+        with open("dados.pkl", "wb") as f:
+            pickle.dump((self.usuarios, self.livros, self.emprestimos), f)
+
+    def carregar_dados(self):
+        if os.path.exists("dados.pkl"):
+            with open("dados.pkl", "rb") as f:
+                self.usuarios, self.livros, self.emprestimos = pickle.load(f)
 
     def buscar_usuario(self, nome):
         return next((u for u in self.usuarios if u.get_nome() == nome), None)
